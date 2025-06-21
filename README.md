@@ -30,15 +30,18 @@ The output is formatted into a centered box for easy reading directly on your wi
 ## Preview
 
 When run, the script will produce a centered output in your terminal or widget like this:
+```
 ***********************************
 ***** ADB: 192.168.1.$IP:5555 *****
-
 ***** SSH: 192.168.1.$IP:8022 *****
 ***********************************
+```
 *(Note: The IP address will be your device's local IP. Output appears directly in the widget or terminal.)*
 
 A toast notification will also appear with the info:  
-`ADB: 192.168.1.10:5555 | SSH: 192.168.1.10:8022`
+`ADB: 192.168.1.$IP:5555 | SSH: 192.168.1.$IP:8022`
+
+---
 
 ## Screenshots
 
@@ -59,10 +62,11 @@ A toast notification will also appear with the info:
 - SSH server configured in Termux:  
   ```sh
   pkg install openssh
-
+  ```
 Download and Install Gardockt's Termux Terminal Widget (One-liner)
-To always get the latest version, run this in **Termux**:
-```sh
+To always get the latest version, run this in Termux:
+
+```
 url="https://github.com/gardockt/termux-terminal-widget/releases/latest/download/termux-terminal-widget.apk"
 out="termux-terminal-widget.apk"
 wget -O "$out" -q --show-progress "$url" && pm install -r "$out" && rm "$out"
@@ -72,42 +76,44 @@ Or as a one-liner:
 ```
 wget -O ttwidget.apk -q --show-progress "https://github.com/gardockt/termux-terminal-widget/releases/latest/download/termux-terminal-widget.apk" && pm install -r ttwidget.apk && rm ttwidget.apk
 ```
-************************************
 
-## Usage
+**Usage**
 
-1. **Meet the Requirements:**  
-   Ensure you have Termux, the Termux Terminal Widget addon, root access (for ADB), and an SSH server installed and configured.
+Requirements:
+Make sure you have Termux, the Termux Terminal Widget addon, root access (for ADB), and an SSH server installed and configured.
+You’ll also need a widget script from this GitHub repo to power your first self-made widget!
+Either git clone this repo, use wget -v to download the scripts in Termux, or copy and paste any of the short widget scripts into your notepad of choice before copying them into the edit box in the widget setup screen.
 
-2. **Add the Script:**  
-   Save your script (for example, `display-info.sh`) in your `~/.shortcuts/` directory:
+Add the Script:
+Save your script (for example, display-info.sh) in your ~/.shortcuts/ directory:
+```
+mv -v display-info.sh ~/.shortcuts/
+```
+Make the Script Executable:
+```
+chmod +x ~/.shortcuts/display-info.sh
+```
+Add the Widget to Your Home Screen:
 
-  ```
-  mv -v display-info.sh ~/.shortcuts/
-  ```
-3. **Make the Script Executable:**  
+Long-press an empty area of your Android home screen.
 
-4. **Add the Widget to Your Home Screen:**  
-- Long-press an empty area of your Android home screen.
-- Tap **Widgets**.
-- Find **Termux Widget** (green icon) and drag it to your home screen.
+Tap Widgets.
 
-5. **Select Your Script:**  
-- After placing the widget, tap it to bring up a list of available scripts in `~/.shortcuts/`.
-- Select `display-info.sh` (or your script name).
+Find Termux Widget (green icon) and drag it to your home screen.
 
-6. **Run the Widget:**  
-- Tap the widget on your home screen anytime to instantly see your device’s ADB and SSH connection info, both on-screen and as a toast notification.
+Select Your Script:
 
----
+After placing the widget, tap it to bring up a list of available scripts in ~/.shortcuts/.
 
-**Alternative Method: Copy-Paste via Widget Setup**
+Select display-info.sh (or your script name).
 
-- After dragging the Termux Widget onto your home screen, some launchers let you **edit or paste script contents directly** during widget setup.
-- You can copy your desired script to the clipboard, long-press the widget, choose “edit,” and paste the script right into the widget’s code box.
+Run the Widget:
 
----
+Tap the widget on your home screen anytime to instantly see your device’s ADB and SSH connection info, both on-screen and as a toast notification.
 
-*Now you have fast, at-a-glance connection info from your Android home screen!*
+Alternative Method: Copy-Paste via Widget Setup
 
+After dragging the Termux Widget onto your home screen, some launchers let you edit or paste script contents directly during widget setup.
+
+You can copy your desired script to the clipboard, long-press the widget, choose “edit,” and paste the script right into the widget’s code box.
 
