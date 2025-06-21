@@ -35,12 +35,16 @@ When run, the script will produce a centered output in your terminal or widget l
 
 ***** SSH: 192.168.1.$IP:8022 *****
 ***********************************
-
-
 *(Note: The IP address will be your device's local IP. Output appears directly in the widget or terminal.)*
 
 A toast notification will also appear with the info:  
 `ADB: 192.168.1.10:5555 | SSH: 192.168.1.10:8022`
+
+## Screenshots
+
+![Termux ADB/SSH Info Widget Screenshot 1](https://github.com/shi88ihs/Termux-ADB-SSH-StartUp_Connection-Info-Widget/raw/main/adb-ssh-wifi-program.png)
+
+![Termux ADB/SSH Info Widget Screenshot 2](https://github.com/shi88ihs/Termux-ADB-SSH-StartUp_Connection-Info-Widget/raw/main/adb-ssh-wifi-program2.png)
 
 ---
 
@@ -57,26 +61,53 @@ A toast notification will also appear with the info:
   pkg install openssh
 
 Download and Install Gardockt's Termux Terminal Widget (One-liner)
-To always get the latest version, run this in Termux:
-
+To always get the latest version, run this in **Termux**:
+```sh
 url="https://github.com/gardockt/termux-terminal-widget/releases/latest/download/termux-terminal-widget.apk"
 out="termux-terminal-widget.apk"
 wget -O "$out" -q --show-progress "$url" && pm install -r "$out" && rm "$out"
+```
 
 Or as a one-liner:
-
+```
 wget -O ttwidget.apk -q --show-progress "https://github.com/gardockt/termux-terminal-widget/releases/latest/download/termux-terminal-widget.apk" && pm install -r ttwidget.apk && rm ttwidget.apk
+```
+************************************
 
-Usage
-1. Make sure all requirements are met and configured.
+## Usage
 
-2. Place this script (e.g., display-info.sh) in your ~/.shortcuts/ directory.
+1. **Meet the Requirements:**  
+   Ensure you have Termux, the Termux Terminal Widget addon, root access (for ADB), and an SSH server installed and configured.
 
-3. Make the script executable:
-   chmod +x ~/.shortcuts/display-info.sh
-4. Add a new Termux widget to your home screen.
+2. **Add the Script:**  
+   Save your script (for example, `display-info.sh`) in your `~/.shortcuts/` directory:
 
-5. Select the script from the list that appears.
+  ```
+  mv -v display-info.sh ~/.shortcuts/
+  ```
+3. **Make the Script Executable:**  
 
-6. Tapping the widget will now run the script and display the connection info.
+4. **Add the Widget to Your Home Screen:**  
+- Long-press an empty area of your Android home screen.
+- Tap **Widgets**.
+- Find **Termux Widget** (green icon) and drag it to your home screen.
+
+5. **Select Your Script:**  
+- After placing the widget, tap it to bring up a list of available scripts in `~/.shortcuts/`.
+- Select `display-info.sh` (or your script name).
+
+6. **Run the Widget:**  
+- Tap the widget on your home screen anytime to instantly see your device’s ADB and SSH connection info, both on-screen and as a toast notification.
+
+---
+
+**Alternative Method: Copy-Paste via Widget Setup**
+
+- After dragging the Termux Widget onto your home screen, some launchers let you **edit or paste script contents directly** during widget setup.
+- You can copy your desired script to the clipboard, long-press the widget, choose “edit,” and paste the script right into the widget’s code box.
+
+---
+
+*Now you have fast, at-a-glance connection info from your Android home screen!*
+
 
