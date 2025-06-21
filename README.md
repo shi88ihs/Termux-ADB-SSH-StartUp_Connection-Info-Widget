@@ -64,19 +64,32 @@ A toast notification will also appear with the info:
   ```sh
   pkg install openssh
   ```
-Download and Install Gardockt's Termux Terminal Widget (One-liner)
-To always get the latest version, run this in Termux:
+  **Optional:** Start SSH automatically at boot with Termux:Boot
 
-```
-url="https://github.com/gardockt/termux-terminal-widget/releases/latest/download/termux-terminal-widget.apk"
-out="termux-terminal-widget.apk"
-wget -O "$out" -q --show-progress "$url" && pm install -r "$out" && rm "$out"
-```
+  **Install the Termux: **Boot app (from F-Droid or your preferred FOSS repo).
 
-Or as a one-liner:
-```
-wget -O ttwidget.apk -q --show-progress "https://github.com/gardockt/termux-terminal-widget/releases/latest/download/termux-terminal-widget.apk" && pm install -r ttwidget.apk && rm ttwidget.apk
-```
+  In Termux, set up the boot script:
+  ```
+  mkdir -p ~/.termux/boot/ && 
+  echo -e '#!/data/data/com.termux/files/usr/bin/sh\ntermux-wake-lock\nsshd' > ~/.termux/boot/sshd_start.sh && 
+  chmod +x ~/.termux/boot/sshd_start.sh
+  ```
+  After this, the SSH daemon will start automatically whenever your device boots, and termux-wake-lock will keep the device awake for stable SSH sessions.
+  Download and Install **Gardockt's Termux Terminal Widget APK** (One-liner)
+  To always get the latest version, run this in **Termux**:
+
+  ```
+  url="https://github.com/gardockt/termux-terminal-widget/releases/latest/download/termux-terminal-widget.apk"
+  out="termux-terminal-widget.apk"
+  wget -O "$out" -q --show-progress "$url" && pm install -r "$out" && rm "$out"
+  ```
+
+  Or as a one-liner:
+  ```
+  wget -O termux-terminal-widget.apk -q --show-progress "https://github.com/gardockt/termux-terminal-widget/releases/latest/download/termux-terminal-widget.apk"
+  && pm install -r termux-terminal-widget.apk
+  && rm -v -i termux-terminal-widget.apk
+  ```
 
 
 
