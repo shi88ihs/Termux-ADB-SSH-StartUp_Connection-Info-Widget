@@ -1,17 +1,12 @@
-# Termux-ADB-SSH-StartUp_Connection-Info-Widget
+# Termux-ADB-SSH-StartUp_Connection-Info-Widget [ROOT-REQUIRED]
 
 ![Termux ADB/SSH Info Widget Screenshot 1](https://github.com/shi88ihs/Termux-ADB-SSH-StartUp_Connection-Info-Widget/raw/main/adb-ssh-wifi-program.png)
 
-A script for Termux:Widget that displays your device's ADB & SSH connection info.  
-It enables ADB over Wi-Fi (root required), starts the SSH server, and shows the local IP and ports in a centered box and as a toast notification. Perfect for quick wireless access to your device from your home screen.
+Finally, a quick and easy way to interact with your Android device using both **ADB** and **SSH** shells—while always staying up to date on your current IP and the ports needed to connect!
+No more digging through **Developer Options**, typing in complex port numbers, constantly running **ip r** in Termux, or searching Wi-Fi settings for your current IP address.
+All connection info is displayed at boot, and services are launched automatically!
 
----
-
-## Termux ADB & SSH Connection Info Widget
-
-This is a simple shell script for Termux, designed to be used with the Termux:Widget addon. It enables ADB over Wi-Fi, starts an SSH server, and then displays the device's local IP address and the correct ports for both services.
-
-The output is formatted into a centered box for easy reading directly on your widget screen. It also provides a toast notification for quick access to the connection details.
+This script for Termux:Widget displays your device’s **ADB** & **SSH** connection info, enables **ADB** over Wi-Fi (root required), starts the **SSH** server, and shows the local IP and ports in a centered box and as a toast notification. Perfect for quick wireless access to your device—right from your home screen.
 
 ---
 
@@ -24,7 +19,7 @@ The output is formatted into a centered box for easy reading directly on your wi
 - Displays connection information in a visually appealing, centered box.
 - Displays a termux-toast notification with your phone’s current IP address and the ports needed for Wi-Fi shell access.
 - Optionally keeps the device awake using `termux-wake-lock` (recommended for stable connections).
-- Access your phone’s ADB shell or SSH shell in Termux—even when the screen is off!
+- Access your phone’s **ADB** shell or SSH shell in Termux—even when the screen is off!
 - Use the `scrcpy` command-line tool to remotely control and view your phone’s screen over Wi-Fi!
 
 ---
