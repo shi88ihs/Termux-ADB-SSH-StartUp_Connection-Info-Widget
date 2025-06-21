@@ -52,7 +52,8 @@ A toast notification will also appear with the info:
 ---
 
 ## Requirements
-
+[<img src="assets/izzy_on_droid.png" alt="Get it on IzzyOnDroid" height="70">](https://apt.izzysoft.de/fdroid/index/apk/com.gardockt.termuxterminalwidget)
+[<img src="assets/codeberg.svg" alt="Get it on Codeberg" height="70">](https://codeberg.org/gardockt/termux-terminal-widget/releases)
 - [Termux](https://f-droid.org/packages/com.termux/) app on Android.
 - [Termux Terminal Widget (by gardockt)](https://github.com/gardockt/TermuxTerminalWidget)  
   &nbsp;&nbsp;Package: `com.gardockt.termuxterminalwidget`  
@@ -77,12 +78,15 @@ Or as a one-liner:
 wget -O ttwidget.apk -q --show-progress "https://github.com/gardockt/termux-terminal-widget/releases/latest/download/termux-terminal-widget.apk" && pm install -r ttwidget.apk && rm ttwidget.apk
 ```
 
-**Usage**
 
-Requirements:
-Make sure you have Termux, the Termux Terminal Widget addon, root access (for ADB), and an SSH server installed and configured.
+
+**Requirements:**
+
+Make sure you have **Termux**, the Termux Terminal Widget addon, root access (for ADB), and an SSH server installed and configured.
 You’ll also need a widget script from this GitHub repo to power your first self-made widget!
 Either git clone this repo, use wget -v to download the scripts in Termux, or copy and paste any of the short widget scripts into your notepad of choice before copying them into the edit box in the widget setup screen.
+
+**Usage**
 
 Add the Script:
 Save your script (for example, display-info.sh) in your ~/.shortcuts/ directory:
@@ -97,21 +101,21 @@ Add the Widget to Your Home Screen:
 
 Long-press an empty area of your Android home screen.
 
-Tap Widgets.
+**Tap Widgets.**
 
 Find Termux Widget (green icon) and drag it to your home screen.
 
-Select Your Script:
+**Select Your Script:**
 
 After placing the widget, tap it to bring up a list of available scripts in ~/.shortcuts/.
 
 Select display-info.sh (or your script name).
 
-Run the Widget:
+**Run the Widget:**
 
 Tap the widget on your home screen anytime to instantly see your device’s ADB and SSH connection info, both on-screen and as a toast notification.
 
-Alternative Method: Copy-Paste via Widget Setup
+**Alternative Method:** Copy-Paste via Widget Setup
 
 After dragging the Termux Widget onto your home screen, some launchers let you edit or paste script contents directly during widget setup.
 
