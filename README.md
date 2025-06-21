@@ -52,8 +52,8 @@ A toast notification will also appear with the info:
 ---
 
 ## Requirements
-[<img src="assets/izzy_on_droid.png" alt="Get it on IzzyOnDroid" height="70">](https://apt.izzysoft.de/fdroid/index/apk/com.gardockt.termuxterminalwidget)
-[<img src="assets/codeberg.svg" alt="Get it on Codeberg" height="70">](https://codeberg.org/gardockt/termux-terminal-widget/releases)
+[![Get it on IzzyOnDroid](https://apt.izzysoft.de/fdroid/repo/IzzyOnDroid.png)](https://apt.izzysoft.de/fdroid/index/apk/com.gardockt.termuxterminalwidget)
+[![Get it on Codeberg](https://codeberg.org/img/codeberg_badge.svg)](https://codeberg.org/)
 - [Termux](https://f-droid.org/packages/com.termux/) app on Android.
 - [Termux Terminal Widget (by gardockt)](https://github.com/gardockt/TermuxTerminalWidget)  
   &nbsp;&nbsp;Package: `com.gardockt.termuxterminalwidget`  
