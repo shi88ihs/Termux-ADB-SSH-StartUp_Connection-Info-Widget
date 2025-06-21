@@ -1,5 +1,7 @@
 # Termux-ADB-SSH-StartUp_Connection-Info-Widget
 
+![Termux ADB/SSH Info Widget Screenshot 1](https://github.com/shi88ihs/Termux-ADB-SSH-StartUp_Connection-Info-Widget/raw/main/adb-ssh-wifi-program.png)
+
 A script for Termux:Widget that displays your device's ADB & SSH connection info.  
 It enables ADB over Wi-Fi (root required), starts the SSH server, and shows the local IP and ports in a centered box and as a toast notification. Perfect for quick wireless access to your device from your home screen.
 
@@ -40,14 +42,6 @@ When run, the script will produce a centered output in your terminal or widget l
 
 A toast notification will also appear with the info:  
 `ADB: 192.168.1.$IP:5555 | SSH: 192.168.1.$IP:8022`
-
----
-
-## Screenshots
-
-![Termux ADB/SSH Info Widget Screenshot 1](https://github.com/shi88ihs/Termux-ADB-SSH-StartUp_Connection-Info-Widget/raw/main/adb-ssh-wifi-program.png)
-
-![Termux ADB/SSH Info Widget Screenshot 2](https://github.com/shi88ihs/Termux-ADB-SSH-StartUp_Connection-Info-Widget/raw/main/adb-ssh-wifi-program2.png)
 
 ---
 
@@ -134,3 +128,4 @@ After dragging the Termux Widget onto your home screen, some launchers let you e
 
 You can copy your desired script to the clipboard, long-press the widget, choose “edit,” and paste the script right into the widget’s code box.
 
+![Termux ADB/SSH Info Widget Screenshot 2](https://github.com/shi88ihs/Termux-ADB-SSH-StartUp_Connection-Info-Widget/raw/main/adb-ssh-wifi-program2.png)
