@@ -1,45 +1,48 @@
 #!/data/data/com.termux/files/usr/bin/sh
 
-# --- Start ADB over WiFi only if not already running ---
-if ! pgrep -f "adbd" >/dev/null; then
-    su -c 'setprop service.adb.tcp.port 5555'
-    su -c 'stop adbd'
-    su -c 'start adbd'
-fi
+width=29
+star_row=$(printf '%*s' "$width" | tr ' ' '*')
 
-adb_ip=$(ip addr show wlan0 | awk '/inet / {print $2}' | cut -d/ -f1)
+center_star() {
+  local text="$1"
+  local padding=$(( (width - ${#text} - 2) / 2 ))
+  local remainder=$(( (width - ${#text} - 2) % 2 ))
+  printf "%s %s %s\n" \
+    "$(printf '*%.0s' $(seq 1 $padding))" \
+    "$text" \
+    "$(printf '*%.0s' $(seq 1 $((padding + remainder))))"
+}
+
+# Get IP address from wlan0
+ip=$(ip addr show wlan0 | awk '/inet / {print $2}' | cut -d/ -f1)
+
+# Default ports
 adb_port=5555
+ssh_port=$(grep "^Port " ~/.ssh/sshd_config 2>/dev/null | head -1 | awk '{print $2}')
+[ -z "$ssh_port" ] && ssh_port=8022
 
-if [ -z "$adb_ip" ]; then
-    termux-toast "No WiFi IP found for ADB!"
-    echo "Could not find WiFi IP address for ADB. Is WiFi enabled?"
+# Check ADB status
+if su -c 'ps | grep -v grep | grep -q adbd'; then
+  adb_info="ADB: $ip:$adb_port"
 else
-    adb_cmd="From PC Run:\nadb connect $adb_ip:$adb_port\nthen Run:\nscrcpy -K   # For Remote CTRL GUI Access"
-    termux-toast "***ADB over WiFi: adb connect $adb_ip:$adb_port***"
-    echo "$adb_cmd"
+  adb_info="ADB: STOPPED"
 fi
 
-echo "--------------------------"
-
-# --- Start SSHD only if not running ---
-if ! pgrep -f "sshd" >/dev/null; then
-    termux-wake-lock
-    sshd &
-    sleep 1
-fi
-
-ssh_ip=$(ip addr show wlan0 | awk '/inet / {print $2}' | cut -d/ -f1)
-if [ -f ~/.ssh/sshd_config ] && grep -q "^Port " ~/.ssh/sshd_config; then
-    ssh_port=$(grep "^Port " ~/.ssh/sshd_config | head -1 | awk '{print $2}')
+# Check SSH status
+if pgrep -f "sshd" >/dev/null; then
+  ssh_info="SSH: $ip:$ssh_port"
 else
-    ssh_port=8022
+  ssh_info="SSH: STOPPED"
 fi
 
-if [ -z "$ssh_ip" ]; then
-    ssh_msg="Could not detect WiFi IP for SSH! (Is WiFi connected?)"
-else
-    ssh_msg="SSH running on $ssh_ip:$ssh_port"
-fi
+output=$(
+  echo "$star_row"
+  echo "$star_row"
+  center_star "$adb_info"
+  center_star "$ssh_info"
+  echo "$star_row"
+  echo "$star_row"
+)
 
-termux-toast "$ssh_msg"
-echo "$ssh_msg"
+#echo "$output" > /data/data/com.termux/files/home/status_box.txt
+echo "$output"
