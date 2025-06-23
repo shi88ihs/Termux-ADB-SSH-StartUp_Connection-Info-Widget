@@ -93,18 +93,15 @@ Download the needed 3 Scripts:
 #3 Stop Services Script
 
 Save these scripts in your Termux ~/.shortcuts/ directory:
-```
+
 Make the Scripts Executable:
 ```
 chmod +x ~/.shortcuts/*.sh
 ```
 Add the Termux Tasker Widget to Your Home Screen. This will launch the start and stop scripts as seen in the screenshots.
 
-
 Copy-Paste via Widget Setup
 
-After dragging the Termux Widget onto your home screen, some launchers let you edit or paste script contents directly during widget setup.
-
-You can copy your desired script to the clipboard, long-press the widget, choose “edit,” and paste the script right into the widget’s code box.
+Copy the display info script to the clipboard, long-press the widget, choose “edit,” and paste the script right into the widget’s code box.
 
 ![Termux ADB/SSH Info Widget Screenshot 2](https://github.com/shi88ihs/Termux-ADB-SSH-StartUp_Connection-Info-Widget/raw/main/adb-ssh-wifi-program2.png)
