@@ -2,7 +2,7 @@
 
 ![Termux ADB/SSH Info Widget Screenshot 1](https://github.com/shi88ihs/Termux-ADB-SSH-StartUp_Connection-Info-Widget/blob/main/ADB_SSH_Widget_STARTED_Displaying_IP_PORTs.png)
 
-![Termux ADB/SSH Info Widget Screenshot 2]
+![Termux ADB/SSH Info Widget Screenshot 2](https://github.com/shi88ihs/Termux-ADB-SSH-StartUp_Connection-Info-Widget/blob/main/ADB_SSH_Widget_STARTED_Displaying_IP_PORTs.png)
 
 Finally, a quick and easy way to interact with your Android device using both **ADB** and **SSH** shells—while always staying up to date on your current IP and the ports needed to connect!
 No more digging through **Developer Options**, typing in complex port numbers, constantly running **ip r** in Termux, or searching Wi-Fi settings for your current IP address.
