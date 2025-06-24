@@ -105,3 +105,4 @@ Copy-Paste via Widget Setup
 Copy the display info script to the clipboard, long-press the widget, choose “edit,” and paste the script right into the widget’s code box.
 
 ![Termux ADB/SSH Info Widget Screenshot 2](https://github.com/shi88ihs/Termux-ADB-SSH-StartUp_Connection-Info-Widget/raw/main/adb-ssh-wifi-program2.png)
+![Termux ADB/SSH Info Widget Screenshot 3](https://github.com/shi88ihs/Termux-ADB-SSH-StartUp_Connection-Info-Widget/blob/main/Termux-Widget-Diplay-v2.png)
