@@ -6,9 +6,9 @@
 
 Finally, a quick and easy way to interact with your Android device using both **ADB** and **SSH** shells—while always staying up to date on your current IP and the ports needed to connect!
 No more digging through **Developer Options**, typing in complex port numbers, constantly running **ip r** in Termux, or searching Wi-Fi settings for your current IP address.
-All connection info is displayed in the Termux Widget. The start and stop scripts are run separately from termux tasker. 
+All connection info is displayed in the Termux Widget. The **Start and Stop Scripts are run separately** in the Termux Tasker Widget as shown in the ScreenShots and the $IP:$PORT Services info is displayed in the Termux Display Output of CMD Widget, which refreshes when you tap it. 
 
-This script is for Termux Widget and displays your device’s **ADB** & **SSH** connection info, enables or disables **ADB** over Wi-Fi and SSH at the same time(root required for scripts), and shows the local IP and ports in a centerized widget on your home screen. Perfect for quick wireless access to your Android device and your power use developer flow. 
+This script is for **"Termux Display Output of CMD Widget"**(See Dependencies for APK Link) and displays your device’s **ADB** & **SSH** $IP $PORT Connection info, enables or disables **ADB over Wi-Fi Server** and **SSH Termux Server** at the same time(root required for scripts), and shows the Local IP and Ports in a Centerized Widget on your android home screen. Perfect for quick wireless shell access to your Android device and your Power User Developer Flow! 
 
 ---
 
@@ -22,7 +22,7 @@ This script is for Termux Widget and displays your device’s **ADB** & **SSH** 
 - Optionally keeps the device awake using `termux-wake-lock` or use the caffeine widget instead. 
 - Access your phone’s **ADB** shell or **SSH** shell in Termux—even when the **screen is off!**
 - Use the `scrcpy` command-line tool to remotely control and view your phone’s screen over Wi-Fi! By using **"scrcpy -K $IP"** your computer becomes the source of the keyboard and your phone's touch keyboard won't pop up. Very handy for programming your phone further and making typing complex CMDs or Passwords a breeze. And to add to the Magic, you can now copy back and forth text from your Phone to your computer!
-- Experience the power of seamless device control with the scrcpy command-line tool! Effortlessly view and interact with your phone’s screen over Wi-Fi—no cables required. Simply run scrcpy -K $IP, and your computer’s keyboard instantly takes over—say goodbye to your phone’s touch keyboard popping up! It’s an absolute game-changer for typing complex coding commands, or typing in complex and secure passwords. But that’s not all: unlock the true **Magic** of **Cross-Device Productivity** by copying and pasting text freely between your phone and computer. Supercharge your workflow and transform the way you interact with your mobile device!
+- Experience the power of seamless device control with the scrcpy command-line tool! Effortlessly view and interact with your phone’s screen over Wi-Fi—no cables required. Simply run **scrcpy -K $IP**, and your computer’s keyboard instantly takes over—say goodbye to your phone’s touch keyboard popping up! It’s an absolute game-changer for typing complex coding commands, or typing in complex and secure passwords. But that’s not all: unlock the true **Magic** of **Cross-Device Productivity** by copying and pasting text freely between your phone and computer. Supercharge your workflow and transform the way you interact with your mobile device!
 ---
 
 ## Preview
@@ -36,7 +36,7 @@ When run, the script will produce a centered output in your terminal or widget l
 ***********************************
 ***********************************
 ```
-*(Note: The IP address will be your device's local IP. Output appears directly in the widget or terminal.)*
+*(Note: The IP address will be your device's local IP. Output appears directly in the widget or terminal.)* As Backup if you device doesn't support the seting of ADB $PORT to 5555, if displays your **Random ADB Port** that is set and spawned by the system. 
 
 ---
 
